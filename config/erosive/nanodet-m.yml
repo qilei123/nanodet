@@ -95,4 +95,4 @@ evaluator:
 log:
   interval: 10
 
-class_names: ['erosive',]
+class_names: ['erosive']
