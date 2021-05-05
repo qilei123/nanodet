@@ -1,5 +1,5 @@
 #Config File example
-save_dir: /data1/qilei_chen/DATA/erosive/work_dirs/nanodet_m
+save_dir: /data2/qilei_chen/DATA/Highway_Dataset/work_dirs/nanodet_m
 model:
   arch:
     name: OneStageDetector
@@ -16,7 +16,7 @@ model:
       num_outs: 3
     head:
       name: NanoDetHead
-      num_classes: 1
+      num_classes: 3
       input_channel: 96
       feat_channels: 96
       stacked_convs: 2
@@ -42,8 +42,8 @@ model:
 data:
   train:
     name: coco
-    img_path: /data1/qilei_chen/DATA/erosive/images
-    ann_path: /data1/qilei_chen/DATA/erosive/annotations/fine_train.json
+    img_path: /data2/qilei_chen/DATA/Highway_Dataset/images
+    ann_path: /data2/qilei_chen/DATA/Highway_Dataset/annotations/highway.json
     input_size: [320,320] #[w,h]
     keep_ratio: True
     pipeline:
@@ -60,8 +60,8 @@ data:
       normalize: [[103.53, 116.28, 123.675], [57.375, 57.12, 58.395]]
   val:
     name: coco
-    img_path: /data1/qilei_chen/DATA/erosive/images
-    ann_path: /data1/qilei_chen/DATA/erosive/annotations/fine_test.json
+    img_path: /data2/qilei_chen/DATA/Highway_Dataset/images
+    ann_path: /data2/qilei_chen/DATA/Highway_Dataset/annotations/highway.json
     input_size: [320,320] #[w,h]
     keep_ratio: True
     pipeline:
@@ -95,4 +95,4 @@ evaluator:
 log:
   interval: 10
 
-class_names: ['erosive']
+class_names: ['truck','bus','car']
